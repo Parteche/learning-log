@@ -1,0 +1,39 @@
+Libreria NumPy de Python
+Es una libreria no muy popular ya que se usa indirectamente con otras librerias como Pandas, pero si super importante
+Sirve para hacer:
+Procesamiento de datos numericos
+Operaciones algebraicas
+Estadistica y analisis de datos
+Desarrollo de algoritmos de Machine Learning y Deep Learning
+
+De las cosas mas utiles que podemos hacer con NumPy son los arreglos y las matrices y hacer operaciones con ellos
+Por ejemplo:
+#Siempre para usar la libreria NumPy se tiene que importar en el documento antes que nada
+import numpy as np
+
+# Crear un arreglo
+arr = np.array([1, 2, 3, 4, 5])
+print(arr)  # [1 2 3 4 5]
+
+# Operaciones vectorizadas
+print(arr * 2)  # [ 2  4  6  8 10]
+print(np.mean(arr))  # 3.0 (media)
+
+#Arreglo A
+A = np.array([
+    ['a', 'b', 'c'],
+    ['d', 'e', 'f'],
+    ['g', 'h', 'i']
+])
+
+#Los : en numpy sirven para llamar toda una parte de un arreglo, es como una abrebiatura para agarrar una rebanada completa
+print(A[:, :2]) La primera posicion se refiere a filas y la segunda a columnas
+#Por ejemplo, en este caso : estamos llamando todas las filas
+#:2 desde la primera pocision hasta la pocision 2 
+[a b
+d e
+g h]
+
+Tipos de arreglos:
+booleanos
+algebra lineal
