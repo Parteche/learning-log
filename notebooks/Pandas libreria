@@ -1,0 +1,51 @@
+Pandas libreria de Python
+
+Pandas sirve para la manipulacion y analisis de datos
+
+Su estructura principal son:
+series, listas de una sola dimension con indice
+DataFrames, tablas de datos bidimensionales, algo parecido a Excel (tiene filas y columnas)
+
+Para usar pandas lo primero que tienes que hacer es usar la siguiente sintaxis:
+import pandas as pd (con esto se carga la libreria y le das un apodo a pandas, asi cada que tengas que 
+llamar un metodo y a pandas solo utilizaras "pd"
+
+Seguramente lo siguiente que tengas que hacer es cargar un archivo con datos para trabajar, las opciones
+mas comunes son archivos de Excel, formato JSON y CSV
+
+df = pd.read_csv("nombreArchivo.csv")  df es la abreviatura de dataFrame y significa que estamos guardando
+df = pd.read_excel("archivo.xlsx")     nuestro archivo con una base de datos en df y asi poder llamarla mas facil
+df = pd.read_json("archivo.json")      cada que escribamos df estaremos usando nuestra base de datos
+
+El primer paso para trabajar con una base de datos es explorarla y revisarla, los siguiengtes son los metodos de panda mas comunes y utilizados para eso
+
+df.head() #Nos permite visualizar las primeras 5 filas del dataFrame
+df.tail() #Nos permite visualizar las ultimas filas del dataFrame
+df.shape  #Nos dice las dimensiones del dataFrame cuantas filas y columnas
+df.info() #Nos muestra un resumen general del dataFrame como tipos de datos y si hay valores nulos
+df.describe() #Nos muestra estadisticas descriptivas basicas de nuestras columnas numericas
+df.columns #Nos muestra los nombres de las columnas del dataFrame
+df.types  #Nos dice que tipos de datos tenemos por columna
+
+Para hacer limpieza de datos, aparte de lo obvio como datos faltantes, datos nulos, columnas con tipo de dato incorrecto, etc, tambien tenemos que saber
+el objetivo de los datos, es decir, para que los voy a usar? que tipo de preguntas quiero contestar con ellos? a quien son dirigidos? 
+osea el contexto de los datos para asi saber cuando algun dato este fuera de lugar, por ejemplo, si tengo una base de datos de personas con sus edades 
+y tengo datos de 300 años, yo se que los humanos no viven hasta los 300 años, por lo tanto sabre que ese es un dato incorrecto y podria eliminarlo... 
+a eso me refiero con el contexto y los objetivos que se quieren cumplir con esa base de datos.
+
+Limpieza de datos la parte mas tediosa e importante
+
+Metodos para eliminar errores, duplicados y valores nulos
+
+df.isnull().sum() #Sirve para ver cuantos datos nulos tenemos por columna
+df.dropna() #Sirve para eliminar filas que tengan datos nulos
+df.fillna(0) #Sirve para reemplazar celdas con datos nulos por otra cosa
+df.drop_duplicates() #Sirve para eliminar filas duplicadas
+df.rename(columns={"A":"B"}) #Sirve para renombrar columnas
+
+Transformacion de los datos, modificar, crear o convertir columnas
+
+axis=0 direccion de columnas (column) arriba para abajo
+axis=1 direccion de filas (row) de izquierda a derecha
+
+def es para indicar funciones en Python
